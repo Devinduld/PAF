@@ -42,15 +42,15 @@ export default function CommentSection({ postId }) {
     (commentText) => postApi.createComment(postId, commentText),
     {
       onSuccess: () => {
-        queryClient.invalidateQueries(['comments', postId]);
+        queryClient.invalidateQueries (['comments', postId]);
         
-        queryClient.invalidateQueries(['post', postId]);
-        queryClient.invalidateQueries(['userPosts']);
-        queryClient.invalidateQueries(['feed']);
-        queryClient.invalidateQueries(['explorePosts']);
+        queryClient.invalidateQueries  (['post', postId]);
+        queryClient.invalidateQueries (['userPosts']);
+        queryClient.invalidateQueries (['feed']);
+        queryClient.invalidateQueries (['explorePosts']);
         
         setCommentText('');
-        setSuccessMessage('Comment added successfully!');
+        setSuccessMessage ('Comment added successfully!');
         setShowSuccess(true);
       },
       onError: (error) => {
