@@ -44,7 +44,6 @@ export default function CommentSection({ postId }) {
       onSuccess: () => {
         queryClient.invalidateQueries(['comments', postId]);
         
-        // Also invalidate queries that might show comment counts
         queryClient.invalidateQueries(['post', postId]);
         queryClient.invalidateQueries(['userPosts']);
         queryClient.invalidateQueries(['feed']);
