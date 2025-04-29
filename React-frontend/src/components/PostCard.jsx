@@ -81,7 +81,7 @@ export default function PostCard({ post }) {
     (content) => postApi.updatePost(post.id, { 
       content,
       mediaUrls: post.mediaUrls, 
-      skillCategory: post.skillCategory // Preserve the skill category
+      skillCategory: post.skillCategory 
     }),
     {
       onSuccess: () => {
