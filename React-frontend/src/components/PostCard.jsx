@@ -80,7 +80,7 @@ export default function PostCard({ post }) {
   const updateMutation = useMutation(
     (content) => postApi.updatePost(post.id, { 
       content,
-      mediaUrls: post.mediaUrls, // Preserve the existing media URLs
+      mediaUrls: post.mediaUrls, 
       skillCategory: post.skillCategory // Preserve the skill category
     }),
     {
