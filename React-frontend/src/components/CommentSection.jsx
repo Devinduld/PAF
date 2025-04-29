@@ -42,7 +42,6 @@ export default function CommentSection({ postId }) {
     (commentText) => postApi.createComment(postId, commentText),
     {
       onSuccess: () => {
-        // Invalidate comment data
         queryClient.invalidateQueries(['comments', postId]);
         
         // Also invalidate queries that might show comment counts
