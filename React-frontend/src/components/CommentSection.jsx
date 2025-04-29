@@ -54,9 +54,9 @@ export default function CommentSection({ postId }) {
         setShowSuccess(true);
       },
       onError: (error) => {
-        console.error("Error adding comment:", error);
-        setErrorMessage("Failed to add comment. Please try again.");
-        setShowError(true);
+        console.error ("Error adding comment:", error);
+        setErrorMessage ("Failed to add comment. Please try again.");
+        setShowError (true);
       }
     }
   );
