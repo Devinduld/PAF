@@ -197,7 +197,7 @@ export default function PostPage() {
 
   const post = postData?.data;
   
-  // Fixed this line: Properly extract comments from the response data
+  
   const comments = commentsData?.data?.content || (Array.isArray(commentsData?.data) ? commentsData.data : []);
   
   return (
