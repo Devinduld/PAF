@@ -122,6 +122,14 @@ export default function LearningPlanPage() {
     setEditedStepContent(step.content || step.description || step.title || '');
   };
 
+  const handleSaveEdit = () => {
+    if (editedStepContent.trim()) {
+      updateStepMutation.mutate({
+        stepId: editingStep.id,
+        content: editedStepContent.trim()
+      });
+    }
+  };
 
   const handleCancelEdit = () => {
     setEditingStep(null);
