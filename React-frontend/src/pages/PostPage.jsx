@@ -141,7 +141,9 @@ export default function PostPage() {
     }
   };
 
-  
+  const cancelReply = () => {
+    setReplyToId(null);
+    setReplyToUser(null);
   };
 
   const handleEditComment = (comment) => {
@@ -150,9 +152,7 @@ export default function PostPage() {
     setEditCommentText(comment.content);
   };
 
-  const handleDeleteComment = (comment) => {
-    setSelectedComment(comment);
-    deleteCommentMutation.mutate(comment.id);
+  
   };
 
   const handleEditCancel = () => {
