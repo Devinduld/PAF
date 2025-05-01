@@ -86,7 +86,16 @@ export default function LearningPlanPage() {
     }
   );
 
- 
+  const reorderStepMutation = useMutation(
+    ({ stepId, direction }) => learningPlanApi.reorderPlanStep(planId, stepId, direction),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(['learningPlan', planId]);
+        queryClient.invalidateQueries(['userLearningPlans']);
+      }
+    }
+  );
+
   const deletePlanMutation = useMutation(
     () => learningPlanApi.deletePlan(planId),
     {
@@ -143,7 +152,7 @@ export default function LearningPlanPage() {
     deletePlanMutation.mutate();
   };
 
-  
+  // Fix: When editing a learning plan, navigate to edit page with state containing the plan data
   const handleEditPlan = () => {
     navigate(`/learning-plans/edit/${planId}`, { 
       state: { 
