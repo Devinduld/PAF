@@ -152,7 +152,7 @@ export default function LearningPlanPage() {
     deletePlanMutation.mutate();
   };
 
-  // Fix: When editing a learning plan, navigate to edit page with state containing the plan data
+  
   const handleEditPlan = () => {
     navigate(`/learning-plans/edit/${planId}`, { 
       state: { 
