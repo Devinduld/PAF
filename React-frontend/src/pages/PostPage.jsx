@@ -152,7 +152,9 @@ export default function PostPage() {
     setEditCommentText(comment.content);
   };
 
-  
+  const handleDeleteComment = (comment) => {
+    setSelectedComment(comment);
+    deleteCommentMutation.mutate(comment.id);
   };
 
   const handleEditCancel = () => {
@@ -198,16 +200,7 @@ export default function PostPage() {
   
   const comments = commentsData?.data?.content || (Array.isArray(commentsData?.data) ? commentsData.data : []);
   
-  return (
-    <Container maxWidth="md">
-      {/* Post */}
-      {post && <PostCard post={post} />}
-
-      {/* Comments Section */}
-      <Paper sx={{ p: 3, mt: 3 }} id="comments-section">
-        <Typography variant="h6" gutterBottom>
-          Comments ({post?.commentCount || 0})
-        </Typography>
+  
 
         {isAuthenticated ? (
           <Box component="form" onSubmit={handleCommentSubmit} sx={{ mb: 3 }}>
