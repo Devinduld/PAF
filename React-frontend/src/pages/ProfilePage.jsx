@@ -118,7 +118,7 @@ export default function ProfilePage() {
     }
   );
   
-  // Delete progress mutation
+  
   const deleteProgressMutation = useMutation(
     (progressId) => learningProgressApi.deleteProgress(progressId),
     {
