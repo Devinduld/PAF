@@ -185,7 +185,7 @@ export default function ProfilePage() {
     }
   };
 
-  // Extract user data from response
+  
   // Handle different response formats from different endpoints
   const user = userData?.data?.data || userData?.data || userData;
   const isFollowing = user?.isFollowing || false;  
