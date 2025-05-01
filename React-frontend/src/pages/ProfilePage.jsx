@@ -103,7 +103,7 @@ export default function ProfilePage() {
     }
   );
 
-  // Unfollow user mutation
+  
   const unfollowMutation = useMutation(
     () => userApi.unfollowUser(userId),
     {
