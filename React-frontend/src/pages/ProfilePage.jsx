@@ -88,7 +88,7 @@ export default function ProfilePage() {
     }
   );
 
-  // Follow user mutation
+  
   const followMutation = useMutation(
     () => userApi.followUser(userId),
     {
