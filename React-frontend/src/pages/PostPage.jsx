@@ -141,9 +141,7 @@ export default function PostPage() {
     }
   };
 
-  const cancelReply = () => {
-    setReplyToId(null);
-    setReplyToUser(null);
+  
   };
 
   const handleEditComment = (comment) => {
