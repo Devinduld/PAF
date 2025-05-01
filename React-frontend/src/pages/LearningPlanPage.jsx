@@ -50,20 +50,7 @@ export default function LearningPlanPage() {
     }
   );
 
-  const addStepMutation = useMutation(
-    (content) => learningPlanApi.addPlanStep(planId, { content }),
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries(['learningPlan', planId]);
-        queryClient.invalidateQueries(['userLearningPlans']);
-        setNewStep('');
-        setAddStepError('');
-      },
-      onError: (error) => {
-        setAddStepError(error.response?.data?.message || 'Failed to add step');
-      }
-    }
-  );
+
 
   const updateStepMutation = useMutation(
     ({ stepId, content }) => learningPlanApi.updatePlanStep(planId, stepId, { content }),
