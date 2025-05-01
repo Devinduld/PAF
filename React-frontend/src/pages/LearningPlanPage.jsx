@@ -86,16 +86,7 @@ export default function LearningPlanPage() {
     }
   );
 
-  const reorderStepMutation = useMutation(
-    ({ stepId, direction }) => learningPlanApi.reorderPlanStep(planId, stepId, direction),
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries(['learningPlan', planId]);
-        queryClient.invalidateQueries(['userLearningPlans']);
-      }
-    }
-  );
-
+ 
   const deletePlanMutation = useMutation(
     () => learningPlanApi.deletePlan(planId),
     {
